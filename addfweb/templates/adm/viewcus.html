@@ -1,0 +1,113 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>addf</title>
+
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+
+
+
+
+
+
+
+</head>
+
+<body>
+{% include "adm/header.html" %}
+
+
+  <!--middle-->
+
+      <div style="width:1050px; height:auto; margin:auto;border:#000099 1px solid;">
+      <div >{% include "adm/left.html" %}</div>
+
+<!--right-->
+
+<div style="width:810px; height:auto; float:left; margin:auto; border:1px solid #999999; border-radius:5px; margin-top:5px; margin-left:15px">
+
+<div style="margin-left:5px">
+<table width="800" bgcolor="#CDCDCD" border="3" style="border-collapse:collapse">
+
+  <tr>
+
+
+        	<thead>
+            	<th width="100">
+                SerialNumber1
+                </th>
+                <th width="150">
+               	CustomerName
+                </th>
+                <th width="150">
+               Email
+                </th>
+                <th width="150">
+               MobileNumber
+                </th>
+
+
+ </thead>
+            </tr>
+
+{% for x in rows1 %}
+			<tr>
+			<td width='100'>{{x.0}}</td>
+			<td width='150'>{{x.1}}</td>
+			<td width='150'>{{x.2}}</td>
+			<td width='150'>{{x.3}}</td>
+			</tr>
+{% endfor %}
+
+	  </table></div>
+      <br />
+       <hr width="800" />
+                <center> <input type="submit" value="Print" onclick="window.print() " /></center>
+                <hr width="800" />
+                <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+
+
+

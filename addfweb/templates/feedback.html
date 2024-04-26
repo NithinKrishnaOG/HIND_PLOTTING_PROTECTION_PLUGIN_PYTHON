@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Accessible Deal Deception Finding</title>
+
+<link href="themes/1/js-image-slider.css" rel="stylesheet" type="text/css" />
+
+ <script src="themes/1/js-image-slider.js" type="text/javascript"></script>
+
+ <link href="generic.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+
+<body>
+
+
+
+<div style="width:100%; height:auto;">
+
+
+
+   <!--header --><div style="height:120px; width:100%; background-color:#8B8A90;border:0px solid #000000;">
+
+  {% include "header1.html" %}>
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+<!--slider down data-->
+
+            <div style="height:500px;; width:1050px;  margin-top:20px; margin:auto; border:0px solid #000000; background-color:#FFFFFF;  ">
+
+            <div style="height:35px; width:1050px; border:0px solid #000000; margin-top:10px; background-color:#F1F0F0; border-radius:5px; color:#1C7582;">
+
+         <font style=" font-size:18px;"><b>Customer Feedback</b></font>
+
+            </div>
+
+            <form name="form2" action="feedbackhandler">
+
+
+
+
+
+
+
+
+
+            <table border="0" style="background-color:#F1F0F0; margin-top:50px ; width:500px; border:1px solid #999999; border-radius:5px; height:300px;" align="center">
+
+<tr><td>
+
+
+
+            <table border="0" style="background-color:#F1F0F0; margin-top:10px ; width:400px; border:0px solid #999999; border-radius:5px; height:300px;" align="center">
+
+
+
+            <tr><td colspan="2">Feedback</td></tr>
+
+            <tr><td colspan="2"><b>Name</b><br><input type="text" name="name" required></td></tr>
+
+            <tr><td colspan="2"><b>Email</b><br><input type="email" name="email" required></td></tr>
+              <tr><td colspan="2"><b>ContactNo.</b><br><input type="number" name="mnum" required></td></tr>
+                 <tr><td colspan="4"><b>Feedback.</b><br><textarea name="msg" placeholder="Feedback" required></textarea></td></tr>
+
+            <tr><td>
+
+            <input type="submit" name="submit" value="submit" style="border:0px solid #000000; border-radius:5px; background-color:#269FB2; height:25px; color:#FFFFFF;"></td><td>
+
+            </table>
+
+</td></tr></table>
+			<div class="col-xl-12" >
+			 	<h4 style="color:red;" align="center">{{message}}</h4>
+			</div>
+
+           </form>
+
+
+
+        </div><!--slider down close-->
+
+
+
+         <div style="height:30px; width:1050px; margin:auto; border:0px solid #000000;">
+
+           {% include "marquee.html" %}
+
+
+
+        </div>
+
+
+
+       <!--footer--><div style="width:100%; background-color:#414040; height:150px; border:1px solid #000000; ">
+
+           {% include "footer.html" %}
+
+         </div><!--footer close-->
+
+     </div> <!--center close-->
+
+           </div><!--main close-->
+
+
+
+
+
+</body>
+
+</html>
+
+
+

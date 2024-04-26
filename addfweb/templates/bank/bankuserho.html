@@ -1,0 +1,460 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html>
+
+<script type="text/javascript">
+
+
+
+function validate()
+
+{
+
+	if (document.form1.name.value=="")
+
+
+
+	{
+
+		alert("Name Is Required!");
+
+		document.form1.name.focus();
+
+		return false;
+
+		}
+
+		if(document.form1.email.value=="")
+
+		{ alert("Email Is Required");
+
+		document.form1.email.focus();
+
+		return false;
+
+		}
+
+		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form1.email.value))
+
+  {
+
+  }
+
+   else
+
+   {
+
+	    alert("Entered an invalid email address!")
+
+		document.form1.email.focus();
+
+    	return (false);
+
+ 	}
+
+
+
+
+
+
+
+
+
+		if(document.form1.contact.value=="")
+
+		{ alert("Contact No Is Required");
+
+		document.form1.contact.focus();
+
+		return false;
+
+		}
+
+
+
+		if(  /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(form1.contact.value))
+
+		{
+
+		}
+
+		else
+
+		{
+
+		 alert("Entered an invalid Contact number")
+
+		document.form1.contact.focus();
+
+    	return (false);
+
+		}
+if(document.form1.cardno.value=="")
+
+		{ alert("Cardno Is Required");
+
+		document.form1.cardno.focus();
+
+		return false;
+
+		}
+if(document.form1.cardno.value.length!=16)
+
+		{ alert("Card length should 16");
+
+		document.form1.cardno.focus();
+
+		return false;
+
+		}
+
+if(document.form1.securitycode.value=="")
+
+		{ alert("securitycode Is Required");
+
+		document.form1.securitycode.focus();
+
+		return false;
+
+		}
+if(document.form1.securitycode.value.length!=3)
+
+		{ alert("securitycode length should 3");
+
+		document.form1.securitycode.focus();
+
+		return false;
+
+		}
+
+
+//---------------
+if(document.form1.q1.value=="")
+
+		{ alert("question1 is required");
+
+		document.form1.q1.focus();
+
+		return false;
+
+		}
+if(document.form1.a1.value=="")
+
+		{ alert("Answer1 Is Required");
+
+		document.form1.a1.focus();
+
+		return false;
+
+		}
+if(document.form1.q2.value=="")
+
+		{ alert("question2 is required");
+
+		document.form1.q2.focus();
+
+		return false;
+
+		}
+if(document.form1.a2.value=="")
+
+		{ alert("Answer2 Is Required");
+
+		document.form1.a2.focus();
+
+		return false;
+
+		}
+if(document.form1.q3.value=="")
+
+		{ alert("question3 is required");
+
+		document.form1.q3.focus();
+
+		return false;
+
+		}
+if(document.form1.a3.value=="")
+
+		{ alert("Answer3 Is Required");
+
+		document.form1.a3.focus();
+
+		return false;
+
+		}
+document.form1.submit();
+
+
+
+
+
+	}
+
+
+
+
+
+		</script>
+
+<head>
+
+<title>addf</title>
+
+<link href="{% static 'themes/1/js-image-slider.css' %}" rel="stylesheet" type="text/css" />
+
+ <script src="{% static 'themes/1/js-image-slider.js' %}" type="text/javascript"></script>
+
+ <link href="{% static 'css/generic.css' %}" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+
+<body>
+
+
+
+<div style="width:100%; height:auto;">
+
+
+
+   <!--header --><div style="height:120px; width:100%; background-color:#8B8A90;border:0px solid #000000;">
+
+ {% include "bank/header1.html" %}
+
+   </div>
+
+
+
+  <table style="height:auto; width:1050px; margin:auto;   border:0px solid #000000; background-color:#FFFFFF; " >
+
+           <tr><td> <div style="height:35px; width:1050px; border:0px solid #000000; margin-top:10px; background-color:#D3D1D1; border-radius:5px; color:#1C7582;">
+
+         <font style=" font-size:18px; margin-left:10px;"><b>My Account</b></font>
+
+            </div>
+
+            <div style="margin-top:5px;  border:0px solid #CC0000;height:600px;overflow:auto">
+
+
+
+
+
+
+
+            <!--registration form--><div style="border:1px solid #DADADA; border-radius:5px; height:350px; width:600px; height:700px;float:left; margin-left:50px; margin-top:20px;">
+
+
+
+
+
+            <form name="form1" id="form1" method="post"  action="editbankuser">
+            {% csrf_token %}
+
+            <table border="0" style="width:600px" cellspacing="12">
+
+
+            <tr style="background-color:#CDEFF3; color:#828282;; height:30px;"><td colspan="2"><b>Edit Details</b></td></tr>
+
+            <tr>
+
+
+
+            <td>Name</td><td><input type="text" name="name" value="{{x.1}}" style="width:300px; height:25px;" disabled></td>
+
+            </tr>
+
+            <tr>
+
+            <td>E-Mail Id</td><td><input type="text" name="email" value="{{x.2}}" style="width:300px; height:25px;" disabled></td>
+
+            </tr>
+
+
+
+            <tr>
+
+            <td>Contact Number</td><td><input type="text" name="contact" value="{{x.3}}" style="width:300px; height:25px;" disabled></td>
+
+            </tr>
+			<tr>
+
+             <td>Card no</td><td><input type="number"  name="cardno" value="{{x.5}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+			<tr>
+
+             <td>Expiry Moth</td><td>
+               <select name="expirymonth" id="expirymonth">
+                 <option {% if em == "1" %}selected{% endif %} value="1">1</option>
+                 <option {% if em == "2" %}selected{% endif %} value="2">2</option>
+                 <option {% if em == "3" %}selected{% endif %} value="3">3</option>
+                 <option {% if em == "4" %}selected{% endif %} value="4">4</option>
+                 <option {% if em == "5" %}selected{% endif %} value="5">5</option>
+                 <option {% if em == "6" %}selected{% endif %} value="6">6</option>
+                 <option {% if em == "7" %}selected{% endif %} value="7">7</option>
+                 <option {% if em == "8" %}selected{% endif %} value="8">8</option>
+                 <option {% if em == "9" %}selected{% endif %} value="9">9</option>
+                 <option {% if em == "10" %}selected{% endif %} value="10">10</option>
+                 <option {% if em == "11" %}selected{% endif %} value="11">11</option>
+                 <option {% if em == "12" %}selected{% endif %} value="12">12</option>
+			 </select>
+
+             </td>
+
+            </tr>
+			<tr>
+
+             <td>Expiry Year</td><td>
+               <select name="expiryyear" id="expiryyear">
+                 <option {% if ey == "2020" %}selected{% endif %} value="2020">2020</option>
+                 <option {% if ey == "2021" %}selected{% endif %} value="2021">2021</option>
+                 <option {% if ey == "2022" %}selected{% endif %} value="2022">2022</option>
+                 <option {% if ey == "2023" %}selected{% endif %} value="2023">2023</option>
+                 <option {% if ey == "2024" %}selected{% endif %} value="2024">2024</option>
+                 <option {% if ey == "2025" %}selected{% endif %} value="2025">2025</option>
+                 <option {% if ey == "2026" %}selected{% endif %} value="2026">2026</option>
+                 <option {% if ey == "2027" %}selected{% endif %} value="2027">2027</option>
+                 <option {% if ey == "2028" %}selected{% endif %} value="2028">2028</option>
+			 </select>
+
+             </td>
+
+            </tr>
+			<tr>
+
+             <td>Security Code(CCV):</td><td><input type="number"  name="securitycode" name="securitycode" value="{{x.8}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+            <tr>
+
+			       <td>Security Question1</td><td><input type="text"  name="q1"  value="{{x.9}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+			<tr>
+
+			       <td>Security Answer1</td><td><input type="text"  name="a1" value="{{x.10}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+ 			<tr>
+
+			       <td>Security Question2</td><td><input type="text"  name="q2"  value="{{x.11}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+			<tr>
+
+			       <td>Security Answer2</td><td><input type="text"  name="a2" value="{{x.12}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+			<tr>
+
+			       <td>Security Question3</td><td><input type="text"  name="q3"  value="{{x.13}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+			<tr>
+
+			       <td>Security Answer3</td><td><input type="text"  name="a3" value="{{x.14}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+
+<!---------------------------------->
+
+			<tr>
+
+			       <td>Security Question4</td><td><input type="text"  name="q4"  value="{{x.16}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+			<tr>
+
+			       <td>Security Answer4</td><td><input type="text"  name="a4" value="{{x.17}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+
+			<tr>
+
+			       <td>Security Question5</td><td><input type="text"  name="q5"  value="{{x.18}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+			<tr>
+
+			       <td>Security Answer5</td><td><input type="text"  name="a5" value="{{x.19}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+            			<tr>
+
+						       <td>Security Question6</td><td><input type="text"  name="q6"  value="{{x.20}}" style="width:300px; height:25px;" ></td>
+
+			            </tr>
+						<tr>
+
+						       <td>Security Answer6</td><td><input type="text"  name="a6" value="{{x.21}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+            			<tr>
+
+						       <td>Security Question7</td><td><input type="text"  name="q7"  value="{{x.22}}" style="width:300px; height:25px;" ></td>
+
+			            </tr>
+						<tr>
+
+						       <td>Security Answer7</td><td><input type="text"  name="a7" value="{{x.23}}" style="width:300px; height:25px;" ></td>
+
+            </tr>
+<!-------------------------------------->
+
+
+
+
+
+
+            <tr><td colspan="2" align="right"><input type="button" name="update" onclick="return validate();" value="Update" style="border:1px solid #999999; border-radius:5px; height:35px; width:80px; font-size:16px; margin-right:25px; background-color:#74DBCF;" align="middle"></td></tr>
+
+
+
+
+
+            </table></form>
+
+
+
+            </div><!--registration form-->
+
+
+
+              </td></tr>
+
+             </table>
+             <div class="col-xl-12" >
+			 			 	<h4 style="color:red;" align="center">{{message}}</h4>
+			</div>
+
+
+
+
+
+
+
+   <br><br>
+
+
+
+       <!--footer--><div style="width:100%; background-color:#414040; height:150px; border:1px solid #000000; ">
+
+          {% include "bank/footer.html" %}
+
+         </div><!--footer close-->
+
+     </div> <!--center close-->
+
+           </div><!--main close-->
+
+
+
+
+
+</body>
+
+</html>
+

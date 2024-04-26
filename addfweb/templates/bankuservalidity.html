@@ -1,0 +1,169 @@
+{% load staticfiles %}
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>addf</title>
+
+<link href="{% static 'themes/1/js-image-slider.css' %}" rel="stylesheet" type="text/css" />
+
+ <script src="{% static 'themes/1/js-image-slider.js' %}" type="text/javascript"></script>
+
+ <link href="{% static 'css/generic.css' %}" rel="stylesheet" type="text/css" />
+ <script type="text/javascript">
+
+
+
+ function validate(a1,a2,a3)
+
+ {
+
+		//alert("hai");
+ 		if(document.form1.a1e.value=="")
+
+ 		{
+ 		alert("Answer1 Is Required");
+
+ 		document.form1.a1e.focus();
+
+ 		return false;
+
+ 		}
+ 		if(document.form1.a2e.value=="")
+		{
+		 alert("Answer2 Is Required");
+
+		 document.form1.a2e.focus();
+
+		 return false;
+
+ 		}
+ 		if(document.form1.a3e.value=="")
+
+ 		{
+
+		 alert("Answer3 Is Required");
+
+		 document.form1.a3e.focus();
+
+ 		return false;
+
+ 		}
+
+
+
+if(document.form1.a1e.value==document.form1.a1.value && document.form1.a2e.value==document.form1.a2.value && document.form1.a3e.value==document.form1.a3.value )
+ {
+   document.getElementById("form1").submit();
+
+ }else{
+
+	alert("Security Answers are not Matching");
+ }
+
+
+
+
+ 	}
+
+	 </script>
+
+</head>
+
+
+<body>
+
+
+
+<div style="width:100%; height:auto;">
+
+
+
+   <!--header --><div style="height:120px; width:100%; background-color:#8B8A90;border:0px solid #000000;">
+
+   {% include "header1.html" %}
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="form1" id="form1" method="post" action="paymentupdate">
+
+
+       {% csrf_token %}
+
+
+
+
+
+
+            <table border="0" style="background-color:#F1F0F0; margin-top:50px ; width:500px; border:1px solid #999999; border-radius:5px; height:300px;" align="center">
+
+<tr><td>
+
+
+
+            <table border="0" style="background-color:#F1F0F0; margin-top:10px ; width:400px; border:0px solid #999999; border-radius:5px; height:300px;" align="center">
+
+            <tr><td style="color:#828282; font-size:18px;" colspan="2">PAYMENT GATEWAY</td></tr>
+
+            <tr><td colspan="2"><h2>VALIDATION</h2></td></tr>
+
+            <tr><td ><b>Question1:</b>{{qa.0}}?<input type="hidden" name="a1" id="a1" value="{{qa.1}}"></td><td><b>Answer1:</b><input type="text" name="a1e" id="a1e" value=""></td></tr>
+
+            <tr><td ><b>Question2:</b>{{qa.2}}?<input type="hidden" name="a2" id="a2" value="{{qa.3}}"></td><td><b>Answer2:</b><input type="text" name="a2e" id="a2e" value=""></td></tr>
+
+            <tr><td ><b>Question3:</b>{{qa.4}}?<input type="hidden" name="a3" id="a3" value="{{qa.5}}"></td><td><b>Answer3:</b><input type="text" name="a3e" id="a3e" value=""></td></tr>
+
+            <tr><td><input type="button"  value="Validate" onclick="return validate('{{x.10}}','{{x.12}}','{{x.14}}')" style="border:0px solid #000000; border-radius:5px; background-color:#269FB2; height:25px; color:#FFFFFF;"></td></tr>
+
+            </table>
+
+</td></tr></table>
+			<div class="col-xl-12" >
+			 	<h4 style="color:red;" align="center">{{message}}</h4>
+			</div>
+
+           </form>
+
+        <div style="height:30px; width:1050px; margin:auto; border:0px solid #000000;">
+
+         {% include "marquee.html" %}
+
+
+
+        </div>
+
+
+
+       <!--footer--><div style="width:100%; background-color:#414040; height:150px; border:1px solid #000000; ">
+
+          {% include "footer.html" %}
+
+         </div><!--footer close-->
+
+     </div> <!--center close-->
+
+           </div><!--main close-->
+
+
+
+
+
+</body>
+
+</html>
